@@ -64,7 +64,7 @@ public class MyArrayList<E> implements List<E> {
 		}
 		add(element);
 
-		for (int i = size-1; i > index; i++) {
+		for (int i = size-1; i > index; i--) {
 			array[i] = array[i-1];
 		}
 		array[index] = element;
@@ -117,7 +117,7 @@ public class MyArrayList<E> implements List<E> {
 	@Override
 	public int indexOf(Object target) {
 		for (int i = 0; i < size; i++) {
-			if (equals(target, array[i]) {
+			if (equals(target, array[i])) {
 				return i;
 			}
 		}
@@ -193,7 +193,7 @@ public class MyArrayList<E> implements List<E> {
 	public E remove(int index) {
 		E element = get(index);
 		for (int i = index; i < size-1; i++) {
-			array[index] = array[index+1];
+			array[i] = array[i+1];
 		}
 		size--;
 		return element;
